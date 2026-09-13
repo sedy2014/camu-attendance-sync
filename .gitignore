@@ -11,4 +11,5 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+.vincent/
 CLAUDE.md

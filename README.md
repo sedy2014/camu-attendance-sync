@@ -33,6 +33,8 @@ camu.in session. It never sees, stores, or enters your camu.in password.
    input format and runs it, which creates/updates a `.xlsx` workbook with one
    sheet per group (e.g. per semester) — rows are sections, columns are weekdays.
 4. You open the workbook whenever you want to check it or copy it elsewhere.
+   **On first run, Claude will ask where you want to save the workbook** — choose
+   a location you can easily find, and future syncs will update that same file.
 
 Nothing runs unattended — you trigger each sync yourself, while logged into
 camu.in in your own browser. There's no server, no stored credentials, and no
@@ -45,13 +47,33 @@ scheduled automatic login.
    pip install openpyxl
    ```
 2. Copy `skills/camu-attendance-sync/` into wherever your Claude Code setup loads
-   skills from (see your Claude Code docs for the skills directory location).
+   skills from (typically `~/.claude/skills/` on Mac/Linux or
+   `%USERPROFILE%\.claude\skills\` on Windows).
 3. Make sure a browser-automation tool (e.g. Claude-in-Chrome) is enabled and
    connected in your Claude Code session.
 4. Log into your institution's camu.in in that same browser.
 5. Ask Claude to sync your attendance. On the first run, Claude will ask how you
    want your classes grouped into sheets (by semester is the default assumption)
    and where to save the workbook.
+
+### Permission Prompts & Auto Mode (Recommended)
+
+**First-time users:** Expect multiple permission prompts during the sync process —
+for browser automation, running Python scripts, reading/writing files, etc. This
+is normal!
+
+**To reduce prompts:** Use Claude Code's **auto mode** by typing `/auto` before
+invoking the skill. In auto mode, Claude will automatically approve read-only
+operations and common safe actions, making the sync much smoother.
+
+```
+/auto
+sync today's camu attendance
+```
+
+You'll still be prompted for critical actions, but routine operations (like
+reading browser pages or writing to your attendance file) will proceed without
+interruption.
 
 ## Example output format
 
