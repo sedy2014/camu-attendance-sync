@@ -62,8 +62,8 @@ shape the skill produces, and run it yourself to see the resulting workbook:
 python scripts/build_attendance_grid.py --config examples/sample_config.json
 ```
 
-This writes `./output/camu_attendance.xlsx` with two sheets (`3rd_Sem_Wk1`,
-`5th_Sem_Wk1`), each a Section x Day grid.
+This writes `./output/attendance.xlsx` with two sheets (`Group_A_Wk1`,
+`Group_B_Wk1`), each a Section x Day grid.
 
 Cell values:
 | Value | Meaning |
@@ -94,6 +94,27 @@ camu.in before trusting it to run unsupervised.
   institution's or camu.in's terms of use — this tool automates something you're
   already allowed to view manually, but you're responsible for checking your own
   institution's policies before relying on it regularly.
+
+## Security scanning (Gitleaks)
+
+Since this project is specifically about *never* committing credentials, it's
+scanned with [Gitleaks](https://github.com/gitleaks/gitleaks) on every push/PR
+via [`.github/workflows/gitleaks.yml`](.github/workflows/gitleaks.yml), using
+the rules in [`.gitleaks.toml`](.gitleaks.toml).
+
+To also catch things locally before you commit:
+
+```
+pip install pre-commit
+pre-commit install
+```
+
+This uses [`.pre-commit-config.yaml`](.pre-commit-config.yaml) to run Gitleaks
+on every `git commit`. You can also run it manually at any time:
+
+```
+pre-commit run gitleaks --all-files
+```
 
 ## License
 

@@ -1,44 +1,44 @@
 {
-  "output_path": "./output/camu_attendance.xlsx",
+  "output_path": "./output/attendance.xlsx",
   "groups": [
     {
-      "sheet_id": "3rd_Sem",
+      "sheet_id": "Group_A",
       "week_label": "Wk1",
-      "title": "3rd Semester - Attendance (Week of 07-Sep to 11-Sep-2026)",
+      "title": "Group A - Attendance (Week of 01-Jan to 05-Jan)",
       "days": ["Monday", "Tuesday", "Wed", "Thursday", "Friday"],
-      "day_dates": ["07-Sep", "08-Sep", "09-Sep", "10-Sep", "11-Sep"],
-      "sections": ["A1", "A3", "A4", "A5"],
+      "day_dates": ["01-Jan", "02-Jan", "03-Jan", "04-Jan", "05-Jan"],
+      "sections": ["Sec1", "Sec2", "Sec3", "Sec4"],
       "data": {
-        "A1": {"0": "NA", "1": "?", "2": [58, 66], "3": [62, 66], "4": "NA"},
-        "A3": {"0": [47, 52], "1": [49, 52], "2": "?", "3": "?", "4": [9, 53]},
-        "A4": {"0": [44, 50], "1": [40, 50], "2": "?", "3": "?", "4": [13, 50]},
-        "A5": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [20, 43]}
+        "Sec1": {"0": "NA", "1": "?", "2": [28, 30], "3": [29, 30], "4": "NA"},
+        "Sec2": {"0": [22, 25], "1": [24, 25], "2": "?", "3": "?", "4": [10, 25]},
+        "Sec3": {"0": [20, 24], "1": [18, 24], "2": "?", "3": "?", "4": [8, 24]},
+        "Sec4": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [15, 20]}
       },
       "course_notes": {
-        "A1": "B.E-CSE(AI&ML) branch (core course)",
-        "A3": "B.E-CSE branch - AI/ML as subject",
-        "A4": "B.E-CSE branch - AI/ML as subject",
-        "A5": "B.E-CSE branch - AI/ML as subject"
+        "Sec1": "Example: core branch course",
+        "Sec2": "Example: elective/shared course",
+        "Sec3": "Example: elective/shared course",
+        "Sec4": "Example: elective/shared course"
       }
     },
     {
-      "sheet_id": "5th_Sem",
+      "sheet_id": "Group_B",
       "week_label": "Wk1",
-      "title": "5th Semester - Attendance (Week of 07-Sep to 11-Sep-2026)",
+      "title": "Group B - Attendance (Week of 01-Jan to 05-Jan)",
       "days": ["Monday", "Tuesday", "Wed", "Thursday", "Friday"],
-      "day_dates": ["07-Sep", "08-Sep", "09-Sep", "10-Sep", "11-Sep"],
-      "sections": ["A1", "A3", "A4", "A5"],
+      "day_dates": ["01-Jan", "02-Jan", "03-Jan", "04-Jan", "05-Jan"],
+      "sections": ["Sec1", "Sec2", "Sec3", "Sec4"],
       "data": {
-        "A1": {"0": "?", "1": "?", "2": [45, 60], "3": "?", "4": [45, 60]},
-        "A3": {"0": "?", "1": "?", "2": "?", "3": [47, 47], "4": [38, 47]},
-        "A4": {"0": "?", "1": "?", "2": "?", "3": [41, 41], "4": [29, 41]},
-        "A5": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [28, 47]}
+        "Sec1": {"0": "?", "1": "?", "2": [30, 35], "3": "?", "4": [31, 35]},
+        "Sec2": {"0": "?", "1": "?", "2": "?", "3": [20, 22], "4": [18, 22]},
+        "Sec3": {"0": "?", "1": "?", "2": "?", "3": [19, 21], "4": [14, 21]},
+        "Sec4": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [12, 20]}
       },
       "course_notes": {
-        "A1": "B.E-CSE(AI&ML) branch (core course)",
-        "A3": "B.E-CSE branch - AI/ML as subject",
-        "A4": "B.E-CSE branch - AI/ML as subject",
-        "A5": "B.E-CSE branch - AI/ML as subject"
+        "Sec1": "Example: core branch course",
+        "Sec2": "Example: elective/shared course",
+        "Sec3": "Example: elective/shared course",
+        "Sec4": "Example: elective/shared course"
       }
     }
   ]

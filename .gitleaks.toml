@@ -1,0 +1,22 @@
+title = "camu-attendance-sync gitleaks config"
+
+# Start from gitleaks' built-in default rule set (common API keys, tokens,
+# private keys, etc.) and layer a couple of project-specific rules on top.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Paths that are expected to contain no real secrets"
+paths = [
+  '''(^|/)output/''',
+  '''\.gitignore''',
+]
+
+# This project is explicitly about NOT storing camu.in (or any) credentials
+# anywhere in the repo -- flag anything that looks like a password/credential
+# assignment as an extra guard on top of the default rule set.
+[[rules]]
+id = "camu-credential-like-assignment"
+description = "Looks like a hardcoded username/password/credential assignment"
+regex = '''(?i)(camu[_-]?(password|passwd|pwd)|password\s*=\s*['"][^'"]{4,}['"])'''
+tags = ["credentials", "camu"]
