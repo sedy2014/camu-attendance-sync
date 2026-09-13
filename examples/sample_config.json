@@ -1,0 +1,45 @@
+{
+  "output_path": "./output/camu_attendance.xlsx",
+  "groups": [
+    {
+      "sheet_id": "3rd_Sem",
+      "week_label": "Wk1",
+      "title": "3rd Semester - Attendance (Week of 07-Sep to 11-Sep-2026)",
+      "days": ["Monday", "Tuesday", "Wed", "Thursday", "Friday"],
+      "day_dates": ["07-Sep", "08-Sep", "09-Sep", "10-Sep", "11-Sep"],
+      "sections": ["A1", "A3", "A4", "A5"],
+      "data": {
+        "A1": {"0": "NA", "1": "?", "2": [58, 66], "3": [62, 66], "4": "NA"},
+        "A3": {"0": [47, 52], "1": [49, 52], "2": "?", "3": "?", "4": [9, 53]},
+        "A4": {"0": [44, 50], "1": [40, 50], "2": "?", "3": "?", "4": [13, 50]},
+        "A5": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [20, 43]}
+      },
+      "course_notes": {
+        "A1": "B.E-CSE(AI&ML) branch (core course)",
+        "A3": "B.E-CSE branch - AI/ML as subject",
+        "A4": "B.E-CSE branch - AI/ML as subject",
+        "A5": "B.E-CSE branch - AI/ML as subject"
+      }
+    },
+    {
+      "sheet_id": "5th_Sem",
+      "week_label": "Wk1",
+      "title": "5th Semester - Attendance (Week of 07-Sep to 11-Sep-2026)",
+      "days": ["Monday", "Tuesday", "Wed", "Thursday", "Friday"],
+      "day_dates": ["07-Sep", "08-Sep", "09-Sep", "10-Sep", "11-Sep"],
+      "sections": ["A1", "A3", "A4", "A5"],
+      "data": {
+        "A1": {"0": "?", "1": "?", "2": [45, 60], "3": "?", "4": [45, 60]},
+        "A3": {"0": "?", "1": "?", "2": "?", "3": [47, 47], "4": [38, 47]},
+        "A4": {"0": "?", "1": "?", "2": "?", "3": [41, 41], "4": [29, 41]},
+        "A5": {"0": "?", "1": "?", "2": "?", "3": "?", "4": [28, 47]}
+      },
+      "course_notes": {
+        "A1": "B.E-CSE(AI&ML) branch (core course)",
+        "A3": "B.E-CSE branch - AI/ML as subject",
+        "A4": "B.E-CSE branch - AI/ML as subject",
+        "A5": "B.E-CSE branch - AI/ML as subject"
+      }
+    }
+  ]
+}
