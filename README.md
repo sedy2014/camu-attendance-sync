@@ -91,8 +91,8 @@ Cell values:
 | Value | Meaning |
 |---|---|
 | `45/60` | confirmed present/total count |
-| `NA` | confirmed — no class scheduled that section that day |
-| `?` (shaded) | a class was held but the count hasn't been looked up yet |
+| `NA` | no confirmed count available — no class scheduled, or a class was held but camu.in shows it as not yet finalized/recorded |
+| `?` (shaded) | a finalized class was held but the count hasn't been looked up yet |
 | *(blank)* | that day hasn't been checked at all |
 
 ## Adapting this to your institution

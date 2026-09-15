@@ -13,8 +13,13 @@ Grid layout per sheet:
     Row 4: (blank) | date1 | date2 | ...
     Row 5+: one row per section, one cell per day:
         "present/total"  -> confirmed attendance count
-        "NA"             -> confirmed no class scheduled that day
-        "?"              -> a class was held but the count hasn't been looked up yet
+        "NA"             -> no confirmed count available: either no class was
+                             scheduled, or a class was held but its attendance
+                             hasn't been finalized/recorded yet (do not write
+                             the "all present" placeholder some systems show
+                             for an unfinalized session)
+        "?"              -> a finalized class was held but the count hasn't
+                             been looked up yet
         ""                -> day not checked at all
 
 Usage:
@@ -47,8 +52,9 @@ BORDER = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
 FOOTER_NOTE = (
     "Source: camu.in Schedule -> class -> Attendance page (read via an already logged-in "
     "browser session; no credentials stored or entered automatically). "
-    "NA = confirmed no class scheduled that day. ? (shaded) = a class was held but the count "
-    "hasn't been looked up yet. Blank = day not checked at all."
+    "NA = no confirmed count available (no class scheduled, or attendance not yet "
+    "finalized/recorded). ? (shaded) = a finalized class was held but the count hasn't "
+    "been looked up yet. Blank = day not checked at all."
 )
 
 

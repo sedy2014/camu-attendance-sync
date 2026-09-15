@@ -60,13 +60,20 @@ For each class found in Step 1:
    percentage (e.g. "75% attendance"), plus the date and section/course it belongs
    to. A screenshot is the most reliable way to read this bar; a page-text read
    may not reliably surface it depending on how the page renders.
-4. Note: `present`, `total`, `section`, `course/semester label`, `date`.
-5. Navigate back to `#/staffhome` (a fresh navigation, not just browser "back" —
+4. **Check whether the session is actually finalized before trusting the count.**
+   A finalized session shows `Finalized - <name> on <date/time>`. An unfinalized
+   one instead shows a warning like `Attendance not yet recorded` — in that state
+   the count shown (e.g. `48/48`) is just a default "everyone present" placeholder,
+   not real data. Treat an unfinalized session as `"NA"` (see Step 3), not as a
+   real count.
+5. Note: `present`, `total`, `section`, `course/semester label`, `date`, and
+   whether it was finalized.
+6. Navigate back to `#/staffhome` (a fresh navigation, not just browser "back" —
    the date-state resets either way, so treat it as a checkpoint) and re-click the
    left-arrow to return to the target date before visiting the next class.
 
-Repeat until every class from Step 1 has a recorded count (or is confirmed as "no
-data available" if camu.in shows the session as not yet finalized).
+Repeat until every class from Step 1 has been visited and classified (a real
+count, or `"NA"` per Step 3 if unfinalized/not scheduled).
 
 ## Step 3 — Build/update the Excel grid
 
@@ -76,9 +83,15 @@ data available" if camu.in shows the session as not yet finalized).
 2. Within a group, rows are sections (e.g. A1, A2, A3...) and columns are weekdays.
    Use these cell values:
    - `[present, total]` — a confirmed count for that day
-   - `"NA"` — confirmed no class was scheduled that section that day (only write
-     this if you actually saw the full day's schedule and it wasn't there)
-   - `"?"` — a class was scheduled/held that day but you haven't read its count yet
+   - `"NA"` — no confirmed count is available for that section that day. Covers
+     two cases: (a) you saw the full day's schedule and no class was scheduled,
+     or (b) a class was held but camu.in itself shows the session as
+     **"Attendance not yet recorded"** — that state renders a default
+     all-present count (e.g. `48/48`) that is not real data, so treat it the
+     same as no data rather than writing that default number.
+   - `"?"` — a class was scheduled/held, camu.in shows it as finalized/recorded,
+     but you (the agent) simply haven't read its count yet this run — this is
+     the one state that means "come back and check this."
    - `""` (empty) — that day hasn't been checked at all
 3. Write a JSON config matching `examples/sample_config.json`'s shape, with the
    real data you collected, and an `output_path` pointing at wherever the user
